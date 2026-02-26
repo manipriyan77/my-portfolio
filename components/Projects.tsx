@@ -85,7 +85,7 @@ function ProjectItem({
           <h4
             className="flex gap-4 text-3xl font-bold xs:text-6xl bg-clip-text text-transparent transition-all duration-700"
             style={{
-              backgroundImage: `linear-gradient(to right, #d84e2c 50%, white 50%)`,
+              backgroundImage: `linear-gradient(to right, #8b5cf6 50%, white 50%)`,
               backgroundSize: "200%",
               backgroundPosition: "right",
             }}

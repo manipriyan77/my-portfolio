@@ -10,8 +10,8 @@ body {
 }
 
 @theme {
-  --color-primary: #d84e2c;
-  --color-primary-dark: #6c2716;
+  --color-primary: #8b5cf6;
+  --color-primary-dark: #4c1d95;
   --color-muted-white: rgba(255, 255, 255, 0.6);
   --container-max-width-sm: 640px;
   --container-max-width-md: 768px;
@@ -70,12 +70,21 @@ body {
   will-change: transform;
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @layer base {
   * {
     box-sizing: border-box;
   }
   body {
-    background: #000;
+    background: #0c0a14;
     color: #fff;
   }
 }

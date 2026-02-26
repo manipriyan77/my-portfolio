@@ -79,13 +79,22 @@ export default function AboutMe() {
             </div>
           </div>
 
-          <div className="cursor slide-up-and-fade col-span-full mt-8 text-center md:mt-10">
-            <p
-              className="text-xl uppercase lg:text-4xl"
-              style={{ color: "#d84e2c" }}
+          <div className="slide-up-and-fade col-span-full mt-10 overflow-hidden">
+            <div
+              className="flex whitespace-nowrap"
+              style={{ animation: "marquee 14s linear infinite" }}
             >
-              i can&apos;t stop learning and building
-            </p>
+              {[...Array(4)].map((_, i) => (
+                <span
+                  key={i}
+                  className="shrink-0 pr-16 text-xl uppercase lg:text-4xl"
+                  style={{ color: "#8b5cf6" }}
+                >
+                  i can&apos;t stop learning and building
+                  <span className="mx-6 opacity-30">✦</span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -16,6 +16,29 @@ export default function Banner() {
 
   useGSAP(
     () => {
+      const tl = gsap.timeline({ delay: 1.5 });
+      tl.from(".banner-title", {
+        y: 100,
+        opacity: 0,
+        duration: 1.4,
+        ease: "power3.out",
+      });
+      tl.from(
+        ".hero-tagline",
+        { y: 40, opacity: 0, duration: 1, ease: "power2.out" },
+        "-=0.8"
+      );
+      tl.from(
+        ".hero-cta",
+        { y: 20, opacity: 0, duration: 0.8, ease: "power2.out" },
+        "-=0.6"
+      );
+    },
+    { scope: containerRef }
+  );
+
+  useGSAP(
+    () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -69,20 +92,20 @@ export default function Banner() {
       >
         <div className="max-w-[544px] flex-col items-start justify-center self-center pt-20 max-lg:flex md:pt-0">
           <h1 className="banner-title slide-up-and-fade text-6xl leading-[.95] sm:text-[80px]">
-            <span className="cursor" style={{ color: "#d84e2c" }}>
+            <span className="cursor" style={{ color: "#8b5cf6" }}>
               SOFTWARE
             </span>
             <br />
             <span className="cursor lg:ml-4">ARCHITECT</span>
           </h1>
           <ShinyText
-            className="slide-up-and-fade cursor text-lg md:text-xl"
+            className="slide-up-and-fade hero-tagline cursor text-lg md:text-xl"
             text="Hi! I'm Mani Priyan. I architect scalable frontend systems and cloud infrastructure — turning complex requirements into clean, performant, and maintainable solutions."
           />
-          <Magnet magnetStrength={4}>
+          <Magnet magnetStrength={4} wrapperClassName="hero-cta">
             <button
               className="slide-up-and-fade cursor mt-9 rounded-md font-semibold text-white transition-colors duration-500 hover:text-black group h-12 px-8 inline-flex justify-center items-center gap-2 text-lg uppercase tracking-widest outline-none relative overflow-hidden"
-              style={{ backgroundColor: "#d84e2c" }}
+              style={{ backgroundColor: "#8b5cf6" }}
               onClick={() => {
                 document
                   .getElementById("selected-projects")
@@ -102,7 +125,7 @@ export default function Banner() {
           >
             <span
               className="block text-lg font-bold"
-              style={{ color: "#d84e2c" }}
+              style={{ color: "#8b5cf6" }}
             >
               {"<span>"}
             </span>
@@ -125,7 +148,7 @@ export default function Banner() {
             </div>
             <span
               className="block text-lg font-bold"
-              style={{ color: "#d84e2c" }}
+              style={{ color: "#8b5cf6" }}
             >
               {"</span>"}
             </span>
@@ -134,7 +157,7 @@ export default function Banner() {
           <code className="slide-up-and-fade flex flex-col text-xs tracking-widest text-white lg:hidden lg:text-sm">
             <span
               className="block text-lg font-bold"
-              style={{ color: "#d84e2c" }}
+              style={{ color: "#8b5cf6" }}
             >
               {"<span>"}
             </span>
@@ -145,7 +168,7 @@ export default function Banner() {
             </div>
             <span
               className="block text-lg font-bold"
-              style={{ color: "#d84e2c" }}
+              style={{ color: "#8b5cf6" }}
             >
               {"</span>"}
             </span>

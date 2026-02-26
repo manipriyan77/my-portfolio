@@ -10,17 +10,21 @@ export const SOCIAL_LINKS = [
   { name: "resume", url: GENERAL_INFO.resume },
 ];
 
+const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+
 export const SKILLS = [
   {
     type: "Frontend",
     items: [
       { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
       { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/ffffff" },
-      {
-        name: "TypeScript",
-        icon: "https://cdn.simpleicons.org/typescript/3178C6",
-      },
+      { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+      { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
       { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+      { name: "CSS", icon: `${DI}/css3/css3-original.svg` },
+      { name: "Redux", icon: "https://cdn.simpleicons.org/redux/764ABC" },
+      { name: "Zustand", icon: "https://cdn.simpleicons.org/zustand/433E38" },
+      { name: "React Query", icon: "https://cdn.simpleicons.org/reactquery/FF4154" },
     ],
   },
   {
@@ -28,20 +32,38 @@ export const SKILLS = [
     items: [
       { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
       { name: "Express", icon: "https://cdn.simpleicons.org/express/ffffff" },
-      {
-        name: "PostgreSQL",
-        icon: "https://cdn.simpleicons.org/postgresql/4169E1",
-      },
+      { name: "GraphQL", icon: "https://cdn.simpleicons.org/graphql/E10098" },
+      { name: "PostgreSQL", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
       { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "Redis", icon: "https://cdn.simpleicons.org/redis/DC382D" },
+    ],
+  },
+  {
+    type: "Testing",
+    items: [
+      { name: "Jest", icon: "https://cdn.simpleicons.org/jest/C21325" },
+      { name: "Vitest", icon: "https://cdn.simpleicons.org/vitest/6E9F18" },
+      { name: "Playwright", icon: `${DI}/playwright/playwright-original.svg` },
+      { name: "Cypress", icon: "https://cdn.simpleicons.org/cypress/69D3A7" },
+    ],
+  },
+  {
+    type: "Cloud & DevOps",
+    items: [
+      { name: "AWS", icon: `${DI}/amazonwebservices/amazonwebservices-plain-wordmark.svg` },
+      { name: "Docker", icon: "https://cdn.simpleicons.org/docker/2496ED" },
+      { name: "Vercel", icon: "https://cdn.simpleicons.org/vercel/ffffff" },
+      { name: "GitHub Actions", icon: "https://cdn.simpleicons.org/githubactions/2088FF" },
     ],
   },
   {
     type: "Tools",
     items: [
       { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
-      { name: "Docker", icon: "https://cdn.simpleicons.org/docker/2496ED" },
+      { name: "Vite", icon: "https://cdn.simpleicons.org/vite/646CFF" },
+      { name: "Webpack", icon: "https://cdn.simpleicons.org/webpack/8DD6F9" },
       { name: "Figma", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
-      { name: "VS Code", icon: "https://cdn.simpleicons.org/visualstudiocode/007ACC" },
+      { name: "VS Code", icon: `${DI}/vscode/vscode-original.svg` },
     ],
   },
 ];

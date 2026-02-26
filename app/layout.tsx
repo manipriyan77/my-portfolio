@@ -36,7 +36,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${josefin.className} relative bg-black text-white antialiased select-none`}
+        className={`${josefin.className} relative text-white antialiased select-none`}
+        style={{ backgroundColor: "#0c0a14" }}
       >
         <ReactLenis root options={{ lerp: 0.1, duration: 1.4 }}>
           <Nav />

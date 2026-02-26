@@ -67,7 +67,7 @@ export default function Skills() {
               <div className="flex flex-wrap gap-x-11 gap-y-9 md:col-span-7">
                 {items.map((item) => (
                   <div
-                    className="slide-up flex items-center gap-3.5 leading-none"
+                    className="slide-up flex items-center gap-3.5 leading-none transition-transform duration-300 hover:scale-105 hover:translate-x-1"
                     key={item.name}
                   >
                     <div>

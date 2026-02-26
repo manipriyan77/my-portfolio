@@ -81,7 +81,7 @@ export default function Nav() {
         <div
           className="fixed inset-0 z-[-1] rounded-[50%] scale-150 duration-700"
           style={{
-            backgroundColor: "#d84e2c",
+            backgroundColor: "#8b5cf6",
             transform: isMenuOpen
               ? "translateX(0) scale(1.5)"
               : "translateX(50%) scale(1.5)",

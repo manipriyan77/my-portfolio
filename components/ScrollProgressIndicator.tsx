@@ -49,7 +49,7 @@ export default function ScrollProgressIndicator() {
         className="w-full rounded-full"
         style={{
           height: `${scroll * 100}%`,
-          backgroundColor: "#d84e2c",
+          backgroundColor: "#8b5cf6",
         }}
       />
     </div>

@@ -45,12 +45,16 @@ export default function Experiences() {
   );
 
   return (
-    <section className="py-[250px]" id="my-experience">
+    <section className="py-section" id="my-experience">
       <div className="container" ref={containerRef}>
         <SectionTitle title="My Experience" />
-        <div className="grid gap-14">
+        <div className="relative grid gap-14 pl-6 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-white/10">
           {EXPERIENCES.map((item) => (
-            <div key={item._id} className="experience-item">
+            <div key={item._id} className="experience-item relative">
+              <span
+                className="absolute -left-7.25 top-1.5 size-3 rounded-full border-2 border-white/20"
+                style={{ backgroundColor: "#8b5cf6" }}
+              />
               <p className="cursor text-xl text-white/80">{item.company}</p>
               <p className="cursor mt-3.5 mb-2.5 text-3xl leading-none md:text-4xl">
                 {item.title}
