@@ -50,7 +50,7 @@ export default function AboutMe() {
         <h2 className="slide-up-and-fade mb-20 text-4xl md:text-6xl">
           <ShinyText
             className="cursor"
-            text="I believe in a user centered design approach, ensuring that every project I work on is tailored to meet the specific needs of its users."
+            text="Good architecture is invisible — it just works. I design frontend systems and cloud infrastructure that teams can build on, scale without fear, and maintain without pain."
           />
         </h2>
 
@@ -64,25 +64,17 @@ export default function AboutMe() {
               I&apos;m Mani Priyan.
             </h1>
             <p className="slide-up-and-fade max-w-md text-lg text-white/75">
-              Also known as Mani, a full-stack developer focused on building
-              modern, responsive web applications with clean UI and great
-              performance.
+              Also known as Mani, a Frontend Architect with cloud architecture experience — I care about how systems are structured just as much as how they look and feel.
             </p>
           </div>
 
           <div className="cursor md:col-span-7">
             <div className="max-w-[500px] space-y-3 text-base text-white/80 sm:text-lg">
               <p className="slide-up-and-fade">
-                A full-stack web developer dedicated to turning ideas into
-                creative solutions. I specialize in creating seamless and
-                intuitive user experiences.
+                I work at the intersection of frontend engineering and cloud architecture. From defining component boundaries and rendering strategies to designing deployment pipelines and infrastructure — I think in systems, not just screens.
               </p>
               <p className="slide-up-and-fade">
-                My approach focuses on creating scalable, high-performing
-                solutions tailored to both user needs and business objectives.
-                By prioritizing performance, accessibility, and responsiveness,
-                I strive to deliver experiences that not only engage users but
-                also drive tangible results.
+                Whether it's making a UI fast enough to feel instant or making a backend resilient enough to handle failure gracefully, I focus on the decisions that matter long after the first deploy.
               </p>
             </div>
           </div>
@@ -92,7 +84,7 @@ export default function AboutMe() {
               className="text-xl uppercase lg:text-4xl"
               style={{ color: "#d84e2c" }}
             >
-              i can&apos;t stop shipping side projects
+              i can&apos;t stop learning and building
             </p>
           </div>
         </div>

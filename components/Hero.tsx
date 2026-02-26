@@ -70,14 +70,14 @@ export default function Banner() {
         <div className="max-w-[544px] flex-col items-start justify-center self-center pt-20 max-lg:flex md:pt-0">
           <h1 className="banner-title slide-up-and-fade text-6xl leading-[.95] sm:text-[80px]">
             <span className="cursor" style={{ color: "#d84e2c" }}>
-              FULL-STACK
+              SOFTWARE
             </span>
             <br />
-            <span className="cursor lg:ml-4">DEVELOPER</span>
+            <span className="cursor lg:ml-4">ARCHITECT</span>
           </h1>
           <ShinyText
             className="slide-up-and-fade cursor text-lg md:text-xl"
-            text="Hi! I'm Mani Priyan. A Full-Stack Developer with hands-on experience building high-performance, scalable, and responsive web solutions."
+            text="Hi! I'm Mani Priyan. I architect scalable frontend systems and cloud infrastructure — turning complex requirements into clean, performant, and maintainable solutions."
           />
           <Magnet magnetStrength={4}>
             <button
@@ -109,17 +109,17 @@ export default function Banner() {
             <div className="inline-block leading-7 md:translate-x-5">
               <div className="wrapper">
                 <span className="animateUp inline-block">
-                  Proficient in the latest web technologies and
+                  Bridging frontend precision and cloud-scale
                 </span>
               </div>
               <div className="wrapper">
                 <span className="animateUp inline-block">
-                  frameworks, continuously expanding my skill set
+                  thinking — shipping systems that perform
                 </span>
               </div>
               <div className="wrapper">
                 <span className="animateUp inline-block">
-                  to stay at the forefront of the industry.
+                  under pressure, at any scale.
                 </span>
               </div>
             </div>
@@ -140,9 +140,7 @@ export default function Banner() {
             </span>
             <div className="inline-block leading-7 lg:translate-x-5">
               <span className="ms-4 inline-block">
-                Proficient in the latest web technologies and frameworks,
-                continuously expanding my skill set to stay at the forefront of
-                the industry.
+                Bridging frontend precision and cloud-scale thinking — shipping systems that perform under pressure, at any scale.
               </span>
             </div>
             <span
