@@ -27,12 +27,23 @@ function ProjectItem({
   const arrowCurbRef = useRef<SVGPathElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
-  useGSAP(() => {
-    return () => { timelineRef.current?.kill(); };
-  }, { scope: svgRef });
+  useGSAP(
+    () => {
+      return () => {
+        timelineRef.current?.kill();
+      };
+    },
+    { scope: svgRef },
+  );
 
   const handleMouseEnter = () => {
-    if (!svgRef.current || !boxRef.current || !arrowLineRef.current || !arrowCurbRef.current) return;
+    if (
+      !svgRef.current ||
+      !boxRef.current ||
+      !arrowLineRef.current ||
+      !arrowCurbRef.current
+    )
+      return;
     onMouseEnter(project.slug);
 
     const boxLength = boxRef.current.getTotalLength();
@@ -40,15 +51,35 @@ function ProjectItem({
     const arrowCurbLength = arrowCurbRef.current.getTotalLength();
 
     gsap.set(svgRef.current, { autoAlpha: 0 });
-    gsap.set(boxRef.current, { opacity: 0, strokeDasharray: boxLength, strokeDashoffset: boxLength });
-    gsap.set(arrowLineRef.current, { opacity: 0, strokeDasharray: arrowLineLength, strokeDashoffset: arrowLineLength });
-    gsap.set(arrowCurbRef.current, { opacity: 0, strokeDasharray: arrowCurbLength, strokeDashoffset: arrowCurbLength });
+    gsap.set(boxRef.current, {
+      opacity: 0,
+      strokeDasharray: boxLength,
+      strokeDashoffset: boxLength,
+    });
+    gsap.set(arrowLineRef.current, {
+      opacity: 0,
+      strokeDasharray: arrowLineLength,
+      strokeDashoffset: arrowLineLength,
+    });
+    gsap.set(arrowCurbRef.current, {
+      opacity: 0,
+      strokeDasharray: arrowCurbLength,
+      strokeDashoffset: arrowCurbLength,
+    });
 
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
     tl.to(svgRef.current, { autoAlpha: 1, duration: 0.2 })
       .to(boxRef.current, { opacity: 1, strokeDashoffset: 0, duration: 0.4 })
-      .to(arrowLineRef.current, { opacity: 1, strokeDashoffset: 0, duration: 0.4 }, "<0.2")
-      .to(arrowCurbRef.current, { opacity: 1, strokeDashoffset: 0, duration: 0.4 })
+      .to(
+        arrowLineRef.current,
+        { opacity: 1, strokeDashoffset: 0, duration: 0.4 },
+        "<0.2",
+      )
+      .to(arrowCurbRef.current, {
+        opacity: 1,
+        strokeDashoffset: 0,
+        duration: 0.4,
+      })
       .to(svgRef.current, { autoAlpha: 0, duration: 0.3 }, "+=1");
 
     timelineRef.current = tl;
@@ -62,7 +93,7 @@ function ProjectItem({
 
   return (
     <a
-      href={`#`}
+      href={`/projects/${project.slug}`}
       className="project-item group py-5 leading-none transition-all first:pt-0 last:border-none last:pb-0 md:border-b md:group-hover/projects:opacity-30 md:hover:opacity-100"
       style={{ borderColor: "rgba(255,255,255,0.1)" }}
       onMouseEnter={handleMouseEnter}
@@ -90,10 +121,12 @@ function ProjectItem({
               backgroundPosition: "right",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundPosition = "left";
+              (e.currentTarget as HTMLElement).style.backgroundPosition =
+                "left";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.backgroundPosition = "right";
+              (e.currentTarget as HTMLElement).style.backgroundPosition =
+                "right";
             }}
           >
             {project.name}
@@ -110,7 +143,10 @@ function ProjectItem({
                 strokeLinejoin="round"
                 ref={svgRef}
               >
-                <path ref={boxRef} d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <path
+                  ref={boxRef}
+                  d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                />
                 <path ref={arrowLineRef} d="M10 14 21 3" />
                 <path ref={arrowCurbRef} d="M15 3h6v6" />
               </svg>
@@ -146,7 +182,10 @@ export default function ProjectList() {
 
       const handleMouseMove = contextSafe?.((e: MouseEvent) => {
         if (!containerRef.current || !imageContainer.current) return;
-        if (window.innerWidth < 768) { setSelectedProject(null); return; }
+        if (window.innerWidth < 768) {
+          setSelectedProject(null);
+          return;
+        }
 
         const containerRect = containerRef.current.getBoundingClientRect();
         const imageRect = imageContainer.current.getBoundingClientRect();
@@ -171,7 +210,7 @@ export default function ProjectList() {
       window.addEventListener("mousemove", handleMouseMove);
       return () => window.removeEventListener("mousemove", handleMouseMove);
     },
-    { scope: containerRef, dependencies: [PROJECTS] }
+    { scope: containerRef, dependencies: [PROJECTS] },
   );
 
   useGSAP(
@@ -188,7 +227,7 @@ export default function ProjectList() {
       });
       tl.from(containerRef.current, { y: 150, opacity: 0 });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -222,7 +261,10 @@ export default function ProjectList() {
                 project={project}
                 selectedProject={selectedProject}
                 onMouseEnter={(slug) => {
-                  if (window.innerWidth < 768) { setSelectedProject(null); return; }
+                  if (window.innerWidth < 768) {
+                    setSelectedProject(null);
+                    return;
+                  }
                   setSelectedProject(slug);
                 }}
               />

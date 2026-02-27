@@ -18,23 +18,30 @@ export default function Banner() {
     () => {
       const tl = gsap.timeline({ delay: 1.5 });
       tl.from(".banner-title", {
-        y: 100,
+        y: 120,
         opacity: 0,
-        duration: 1.4,
-        ease: "power3.out",
+        rotation: -5,
+        duration: 1.2,
+        ease: "cubic.out",
       });
       tl.from(
         ".hero-tagline",
-        { y: 40, opacity: 0, duration: 1, ease: "power2.out" },
-        "-=0.8"
+        { y: 50, opacity: 0, x: -30, duration: 1, ease: "back.out" },
+        "-=0.7",
       );
       tl.from(
         ".hero-cta",
-        { y: 20, opacity: 0, duration: 0.8, ease: "power2.out" },
-        "-=0.6"
+        {
+          y: 30,
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.9,
+          ease: "elastic.out(1, 0.5)",
+        },
+        "-=0.5",
       );
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   useGSAP(
@@ -51,10 +58,10 @@ export default function Banner() {
       tl.fromTo(
         ".slide-up-and-fade",
         { y: 0 },
-        { y: -150, opacity: 0, stagger: 0.02 }
+        { y: -180, opacity: 0, rotation: 3, stagger: 0.03 },
       );
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   useGSAP(
@@ -70,9 +77,12 @@ export default function Banner() {
           .to(".wrapper", { overflow: "hidden", duration: 0.4 })
           .from(animateUps, {
             y: "100%",
-            duration: 2,
+            x: "-20px",
+            opacity: 0,
+            duration: 1.8,
             delay: 1.5,
-            ease: "power2.inOut",
+            ease: "back.out",
+            stagger: 0.1,
             scrollTrigger: {
               trigger: codeRef.current,
               start: "top+=100 bottom",
@@ -81,7 +91,7 @@ export default function Banner() {
           });
       }
     },
-    { scope: codeRef }
+    { scope: codeRef },
   );
 
   return (
@@ -93,14 +103,14 @@ export default function Banner() {
         <div className="max-w-[544px] flex-col items-start justify-center self-center pt-20 max-lg:flex md:pt-0">
           <h1 className="banner-title slide-up-and-fade text-6xl leading-[.95] sm:text-[80px]">
             <span className="cursor" style={{ color: "#8b5cf6" }}>
-              SOFTWARE
+              FULLSTACK
             </span>
             <br />
-            <span className="cursor lg:ml-4">ARCHITECT</span>
+            <span className="cursor lg:ml-4">DEVELOPER</span>
           </h1>
           <ShinyText
             className="slide-up-and-fade hero-tagline cursor text-lg md:text-xl"
-            text="Hi! I'm Mani Priyan. I architect scalable frontend systems and cloud infrastructure — turning complex requirements into clean, performant, and maintainable solutions."
+            text="Hi! I'm Mani Priyan. A fullstack developer specializing in frontend engineering and cloud infrastructure — building fast, responsive web applications and scalable backend systems."
           />
           <Magnet magnetStrength={4} wrapperClassName="hero-cta">
             <button
@@ -132,17 +142,17 @@ export default function Banner() {
             <div className="inline-block leading-7 md:translate-x-5">
               <div className="wrapper">
                 <span className="animateUp inline-block">
-                  Bridging frontend precision and cloud-scale
+                  Crafting beautiful frontends and robust
                 </span>
               </div>
               <div className="wrapper">
                 <span className="animateUp inline-block">
-                  thinking — shipping systems that perform
+                  cloud infrastructure — shipping web apps
                 </span>
               </div>
               <div className="wrapper">
                 <span className="animateUp inline-block">
-                  under pressure, at any scale.
+                  that perform and scale with ease.
                 </span>
               </div>
             </div>
@@ -163,7 +173,8 @@ export default function Banner() {
             </span>
             <div className="inline-block leading-7 lg:translate-x-5">
               <span className="ms-4 inline-block">
-                Bridging frontend precision and cloud-scale thinking — shipping systems that perform under pressure, at any scale.
+                Crafting beautiful frontends and robust cloud infrastructure —
+                shipping web apps that perform and scale with ease.
               </span>
             </div>
             <span

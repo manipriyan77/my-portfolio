@@ -29,9 +29,12 @@ export default function Skills() {
 
       tl.from(slideUpEl, { opacity: 0, y: 40, ease: "none", stagger: 0.4 });
 
-      return () => { tl.scrollTrigger?.kill(); tl.kill(); };
+      return () => {
+        tl.scrollTrigger?.kill();
+        tl.kill();
+      };
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   useGSAP(
@@ -47,9 +50,12 @@ export default function Skills() {
 
       tl.to(containerRef.current, { y: -150, opacity: 0 });
 
-      return () => { tl.scrollTrigger?.kill(); tl.kill(); };
+      return () => {
+        tl.scrollTrigger?.kill();
+        tl.kill();
+      };
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
@@ -67,8 +73,12 @@ export default function Skills() {
               <div className="flex flex-wrap gap-x-11 gap-y-9 md:col-span-7">
                 {items.map((item) => (
                   <div
-                    className="slide-up flex items-center gap-3.5 leading-none transition-transform duration-300 hover:scale-105 hover:translate-x-1"
+                    className="slide-up flex items-center gap-3.5 leading-none transition-transform duration-200 hover:scale-110 hover:translate-x-2"
                     key={item.name}
+                    style={{
+                      transitionTimingFunction:
+                        "cubic-bezier(0.34, 1.56, 0.64, 1)",
+                    }}
                   >
                     <div>
                       {/* eslint-disable-next-line @next/next/no-img-element */}

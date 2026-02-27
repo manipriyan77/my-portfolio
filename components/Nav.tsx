@@ -44,16 +44,18 @@ export default function Nav() {
             className="absolute top-1/2 left-1/2 inline-block h-0.5 w-3/5 -translate-x-1/2 rounded-full bg-white duration-300"
             style={{
               transform: isMenuOpen
-                ? "translate(-50%, -50%) rotate(45deg)"
+                ? "translate(-50%, -50%) rotate(45deg) scaleX(0.8)"
                 : "translate(-50%, calc(-50% - 5px))",
+              transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
             }}
           />
           <span
             className="absolute top-1/2 left-1/2 inline-block h-0.5 w-3/5 -translate-x-1/2 rounded-full bg-white duration-300"
             style={{
               transform: isMenuOpen
-                ? "translate(-50%, -50%) rotate(-45deg)"
+                ? "translate(-50%, -50%) rotate(-45deg) scaleX(0.8)"
                 : "translate(-50%, calc(-50% + 5px))",
+              transition: "transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
             }}
           />
         </button>
@@ -61,32 +63,32 @@ export default function Nav() {
 
       {/* Overlay */}
       <div
-        className="fixed inset-0 z-20 bg-black/70 transition-all duration-150"
+        className="fixed inset-0 z-20 bg-black/70 transition-all duration-300"
         style={{
           pointerEvents: isMenuOpen ? "auto" : "none",
           visibility: isMenuOpen ? "visible" : "hidden",
           opacity: isMenuOpen ? 1 : 0,
+          backdropFilter: isMenuOpen ? "blur(4px)" : "blur(0px)",
         }}
         onClick={() => setIsMenuOpen(false)}
       />
 
       {/* Slide-out panel */}
       <div
-        className="fixed top-0 right-0 z-30 h-svh w-[500px] max-w-[calc(100vw-3rem)] overflow-hidden transition-transform duration-700 flex flex-col py-10 lg:justify-center gap-y-14"
+        className="fixed top-0 right-0 z-30 h-svh w-[500px] max-w-[calc(100vw-3rem)] overflow-hidden transition-transform duration-500 flex flex-col py-10 lg:justify-center gap-y-14"
         style={{
           transform: isMenuOpen ? "translateX(0)" : "translateX(100%)",
         }}
       >
         {/* Background bubble */}
         <div
-          className="fixed inset-0 z-[-1] rounded-[50%] scale-150 duration-700"
+          className="fixed inset-0 z-[-1] rounded-[50%] duration-500"
           style={{
             backgroundColor: "#8b5cf6",
             transform: isMenuOpen
               ? "translateX(0) scale(1.5)"
               : "translateX(50%) scale(1.5)",
-            transition: "transform 0.7s ease",
-            transitionDelay: "0.15s",
+            transition: "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)",
           }}
         />
 
@@ -110,7 +112,10 @@ export default function Nav() {
               </ul>
             </div>
             <div>
-              <p className="mb-5 md:mb-8" style={{ color: "rgba(255,255,255,0.6)" }}>
+              <p
+                className="mb-5 md:mb-8"
+                style={{ color: "rgba(255,255,255,0.6)" }}
+              >
                 MENU
               </p>
               <ul className="space-y-3">

@@ -12,20 +12,30 @@ export default function ParticleBackground() {
   useGSAP(() => {
     if (!particlesRef.current.length) return;
 
-    particlesRef.current.forEach((particle) => {
+    particlesRef.current.forEach((particle, index) => {
+      const duration = Math.random() * 12 + 15;
+      const xMovement = (Math.random() - 0.5) * 200; // Horizontal drift
+      const delay = (index / particlesRef.current.length) * 2; // Stagger effect
+
       gsap.set(particle, {
-        width: Math.random() * 3 + 1,
-        height: Math.random() * 3 + 1,
-        opacity: Math.random(),
+        width: Math.random() * 4 + 1,
+        height: Math.random() * 4 + 1,
+        opacity: Math.random() * 0.6 + 0.2,
         left: Math.random() * window.innerWidth,
         top: Math.random() * window.innerHeight,
       });
+
+      // Floating upward with horizontal drift and rotation
       gsap.to(particle, {
-        y: window.innerHeight,
-        duration: Math.random() * 10 + 10,
+        y: -window.innerHeight * 1.5,
+        x: xMovement,
+        rotation: Math.random() * 360,
         opacity: 0,
+        duration: duration,
+        delay: delay,
         repeat: -1,
-        ease: "back.inOut",
+        ease: "sine.inOut",
+        willChange: "transform, opacity",
       });
     });
   }, []);

@@ -25,7 +25,7 @@ export default function AboutMe() {
       });
       tl.from(".slide-up-and-fade", { y: 150, opacity: 0, stagger: 0.05 });
     },
-    { scope: container }
+    { scope: container },
   );
 
   useGSAP(
@@ -41,7 +41,7 @@ export default function AboutMe() {
       });
       tl.to(".slide-up-and-fade", { y: -150, opacity: 0, stagger: 0.02 });
     },
-    { scope: container }
+    { scope: container },
   );
 
   return (
@@ -50,7 +50,7 @@ export default function AboutMe() {
         <h2 className="slide-up-and-fade mb-20 text-4xl md:text-6xl">
           <ShinyText
             className="cursor"
-            text="Good architecture is invisible — it just works. I design frontend systems and cloud infrastructure that teams can build on, scale without fear, and maintain without pain."
+            text="I build fast, user-friendly web applications and deploy them on robust cloud infrastructure — creating seamless experiences at scale."
           />
         </h2>
 
@@ -64,17 +64,24 @@ export default function AboutMe() {
               I&apos;m Mani Priyan.
             </h1>
             <p className="slide-up-and-fade max-w-md text-lg text-white/75">
-              Also known as Mani, a Frontend Architect with cloud architecture experience — I care about how systems are structured just as much as how they look and feel.
+              Also known as Mani, a Frontend Developer with cloud engineering
+              expertise — I specialize in building responsive interfaces and
+              deploying scalable cloud solutions.
             </p>
           </div>
 
           <div className="cursor md:col-span-7">
             <div className="max-w-[500px] space-y-3 text-base text-white/80 sm:text-lg">
               <p className="slide-up-and-fade">
-                I work at the intersection of frontend engineering and cloud architecture. From defining component boundaries and rendering strategies to designing deployment pipelines and infrastructure — I think in systems, not just screens.
+                I focus on frontend development and cloud infrastructure. From
+                building interactive UIs and optimizing performance to deploying
+                applications on cloud platforms — I create solutions that are
+                both beautiful and reliable.
               </p>
               <p className="slide-up-and-fade">
-                Whether it's making a UI fast enough to feel instant or making a backend resilient enough to handle failure gracefully, I focus on the decisions that matter long after the first deploy.
+                Whether it's making a UI fast enough to feel instant or making a
+                backend resilient enough to handle failure gracefully, I focus
+                on the decisions that matter long after the first deploy.
               </p>
             </div>
           </div>
@@ -82,7 +89,7 @@ export default function AboutMe() {
           <div className="slide-up-and-fade col-span-full mt-10 overflow-hidden">
             <div
               className="flex whitespace-nowrap"
-              style={{ animation: "marquee 14s linear infinite" }}
+              style={{ animation: "marquee 16s linear infinite" }}
             >
               {[...Array(4)].map((_, i) => (
                 <span
